@@ -1,0 +1,110 @@
+// color schemes here 
+$bg-main: hsl(217,54%,11%)
+$bg-card: hsl(216,50%,16%)
+$bg-line: hsl(215,32%,27%)
+$shadow: hsl(217,54%,10%)
+$color-white: hsl(0,0%,100%)
+
+// font size   
+$font-family: Outfit, san-serif   
+$body-copy: 18px
+$font-weight: ('regular': 300, 'medium': 400, 'bold': 600)
+
+$soft-cyan: hsl(215,51%,70%)
+$cyan: hsl(178,100%,50%)
+
+* 
+   margin: 0
+   padding: 0
+   box-sizing: border-box
+
+body 
+   background-color: $bg-main
+   font-family: $font-family
+
+
+@media (min-width: 350px)   
+
+   main 
+      display: flex
+      justify-content: center
+      transform: translateY(18vh)
+
+
+   .flex-body-container 
+      display: flex
+      flex-direction: column
+      list-style-type: none
+      width: 350px
+      padding: 1.5rem
+      border-radius: 15px
+      color: $color-white
+      background-color: $bg-card
+      box-shadow: 8px 10px 0 10px $shadow
+
+      & h1 
+         display: inline
+         margin-top: 1.5rem
+
+         &:hover
+            cursor: pointer
+            color: $cyan
+
+      & > img 
+         border-radius: 10px   
+         &:hover 
+            cursor: pointer
+      & > img:active
+            
+
+
+      
+   .paragraph 
+      margin-top: 1rem
+      margin-bottom: 1.5rem
+
+      color: $soft-cyan
+      font-size: $body-copy   
+
+   .icons
+      list-style-type: none
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+      font-size: $body-copy
+      font-weight: map-get($font-weight, 'regular')
+      & li:first-child
+         color: $cyan
+         font-weight: map-get($font-weight, 'bold')
+      & li:last-child
+         font-weight: map-get($font-weight, 'medium')
+
+   .last-credits-container::after
+      content: ""
+      display: block
+      height: 1px
+      margin: 1.5rem 0 1.5rem 0
+      background-color: $bg-line
+
+   .last-credits
+      position: relative
+      display: flex
+      flex-direction: row
+      justify-content: left
+      align-items: center
+      color: $soft-cyan
+      list-style-type: none
+      font-size: $body-copy
+      & a 
+         text-decoration: none
+         color: $color-white
+         &:hover 
+            color: $cyan
+      & li img 
+         width: 3rem  
+         border-radius: 100% 
+         outline: 2px solid white
+         margin-right: 1.5rem
+
+@media (max-width:1440px)          
